@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f2e9" />
+    <meta name="description" content="拉弓、瞄準，讓每一箭都直中靶心。免費遊玩弓箭射擊挑戰。" />
+    <title>準心之上 — 弓箭場</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="準心之上，返回遊戲首頁">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 38 38"><path d="M10 5C31 10 31 28 10 33M10 5L22 19 10 33M6 19h22m-5-5 5 5-5 5"/></svg></span>
+          <span class="brand-name">準心之上<span class="brand-sub">THE ARCHERY RANGE</span></span>
+        </a>
+        <div class="topbar-note"><span class="live-dot"></span> 練習場・第 01 區</div>
+        <button class="sound-toggle" id="sound-toggle" aria-label="切換音效" aria-pressed="true"><span id="sound-icon">♫</span><span id="sound-label">音效開啟</span></button>
+      </header>
+
+      <section class="intro" aria-labelledby="game-title">
+        <div class="intro-copy"><p class="eyebrow"><span>01</span>　ARCHERY / RANGE</p><h1 id="game-title">靜心，<em>然後放箭。</em></h1><p class="intro-subtitle">拉弦蓄力，找到你的角度。風會變，靶心也會。</p></div>
+        <div class="session-stamp"><span class="stamp-label">本回合</span><span class="stamp-number">自由練習</span><span class="stamp-line"></span></div>
+      </section>
+
+      <section class="game-layout" aria-label="弓箭射擊遊戲">
+        <div class="play-column">
+          <div class="range-frame">
+            <div class="range-topline"><span><span class="status-dot"></span> 射擊中</span><span class="range-coordinates" id="wind-display">風向　→　微風</span></div>
+            <div class="canvas-wrap" id="canvas-wrap">
+              <canvas id="game-canvas" aria-label="弓箭射擊場景。按住滑鼠或觸控螢幕並向後拖動來瞄準，放開發射。"></canvas>
+              <div class="canvas-hint" id="canvas-hint"><span class="hint-icon">↖</span><span><b>拉弦，瞄準，放手。</b><small>按住並向後拖曳來調整角度與力道</small></span><span class="hint-dismiss">拖一下就懂</span></div>
+              <div class="round-overlay" id="round-overlay" hidden><span class="overlay-kicker">THIS ROUND</span><strong>練習結束</strong><span class="overlay-score" id="final-score">0</span><span class="overlay-label">TOTAL POINTS</span><button class="overlay-button" id="play-again">再射一回　↗</button></div>
+            </div>
+            <div class="range-bottomline"><span>ARCHER <b>01</b></span><span id="shot-status" aria-live="polite">準備就緒 — 拉起弓弦開始瞄準</span><span>RANGE <b>35 M</b></span></div>
+          </div>
+          <div class="controls-note"><span class="control-symbol">⌘</span><span><b>操作提示</b><span>從弓的位置向後拖曳，拉得越遠射得越快。放開滑鼠發射；點一下可用基本力道。</span></span><kbd>R <i>重新開始</i></kbd></div>
+        </div>
+
+        <aside class="score-panel" aria-label="本回合成績">
+          <div class="panel-heading"><span>SESSION / 01</span><span class="panel-heading-mark">↗</span></div>
+          <div class="score-block"><span class="metric-label">目前得分 <span>POINTS</span></span><strong class="score-number" id="score">0000</strong><div class="score-divider"></div></div>
+          <div class="arrows-block"><div class="metric-label">剩餘箭數 <span>ARROWS</span></div><div class="arrow-count"><strong id="arrows-left">8</strong><span>/ 08 支</span></div><div class="arrow-pips" id="arrow-pips" aria-label="剩餘 8 支箭"></div></div>
+          <div class="last-shot" id="last-shot"><span class="last-shot-icon">◎</span><span><b>你的射程，自己定義。</b><small>每一箭都值得專注。</small></span></div>
+          <button class="restart-button" id="restart-button"><span>↺</span>重新開始<span class="button-key">R</span></button>
+          <div class="panel-footer"><span>拉弓・放箭・再試一次</span><span>弓箭場 © 2025</span></div>
+        </aside>
+      </section>
+
+      <footer class="page-footer"><span>穩住呼吸。信任你的準心。</span><span><span class="footer-star">✳</span> FIELD NOTES — 一場專注的練習</span></footer>
+    </main>
+  </body>
+</html>
